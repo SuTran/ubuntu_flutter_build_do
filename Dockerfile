@@ -25,7 +25,7 @@ RUN dpkg --add-architecture i386 && \
 
 # download and install Android SDK
 # https://developer.android.com/studio#command-tools
-ARG ANDROID_SDK_VERSION=6514223
+ARG ANDROID_SDK_VERSION=6609375
 ENV ANDROID_SDK_ROOT /opt/android-sdk
 RUN mkdir -p ${ANDROID_SDK_ROOT}/cmdline-tools && \
     wget -q https://dl.google.com/android/repository/commandlinetools-linux-${ANDROID_SDK_VERSION}_latest.zip && \
@@ -47,7 +47,7 @@ ENV QTWEBENGINE_DISABLE_SANDBOX 1
 # Install Flutter.
 ENV FLUTTER_ROOT="/opt/flutter"
 
-RUN git clone -b 1.20.1 https://github.com/flutter/flutter "${FLUTTER_ROOT}"
+RUN git clone -b 1.20.3 https://github.com/flutter/flutter "${FLUTTER_ROOT}"
 
 ENV PATH="${FLUTTER_ROOT}/bin:${PATH}"
 
